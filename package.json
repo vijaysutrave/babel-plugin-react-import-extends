@@ -1,0 +1,38 @@
+{
+  "name": "babel-plugin-react-import-extends",
+  "version": "1.0.0",
+  "description": "Write React Components without worrying to import React and extend component",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src/ -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijaysutrave/babel-plugin-react-import-extends.git"
+  },
+  "keywords": [
+    "React",
+    "No",
+    "import",
+    "import",
+    "extends",
+    "component",
+    "no",
+    "without"
+  ],
+  "author": "Vijay Sutrave <vijaysutrave01@gmail.com> (http://vijaysutrave.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vijaysutrave/babel-plugin-react-import-extends/issues"
+  },
+  "homepage": "https://github.com/vijaysutrave/babel-plugin-react-import-extends#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-plugin-syntax-jsx": "^6.13.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.23.0"
+  }
+}
