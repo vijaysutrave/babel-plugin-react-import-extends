@@ -1,5 +1,7 @@
 # babel-plugin-react-import-extends
 
+> Write React Components without having to `extend React.Component` or importing React with every Component.
+
 Have you ever wondered how easy it would be to get rid of the annoying ...`extends React.Component` and not having to manually import React with every component that you write?
 
 Enter `babel-plugin-react-import-extends`
@@ -8,17 +10,22 @@ This babel plugin auto-magically extends a "React Component", and imports React 
 
 
 ## Install
-`npm install -g babel-plugin-react-import-extends`
+`npm install --save-dev babel-plugin-react-import-extends`
 
 
 ## Usage
 Add the plugin to the plugins list in your `.babelrc` file
 
+### Via `.babelrc` (recommended):
+
 ```
 {
-  plugins: ['babel-plugin-react-import-extends', ...otherPlugins]
+  plugins: ['react-import-extends', ...otherPlugins]
 }
 ```
+
+### Via CLI
+babel --plugins react-import-extends script.js
 
 
 ## Standard Input & Output Examples
