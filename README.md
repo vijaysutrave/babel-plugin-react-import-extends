@@ -96,6 +96,10 @@ const StatelessComponent = () => {
 export default StatelessComponent;
 ```
 
+## TODO
+- Options to add more imports
+- PureComponent implementation
+
 
 ## License
 MIT © [vijaysutrave](https://github.com/vijaysutrave)
