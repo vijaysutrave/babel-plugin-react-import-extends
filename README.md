@@ -25,7 +25,7 @@ Add the plugin to the plugins list in your `.babelrc` file
 ```
 
 ### Via CLI
-babel --plugins react-import-extends script.js
+`babel --plugins react-import-extends script.js`
 
 
 ## Standard Input & Output Examples
