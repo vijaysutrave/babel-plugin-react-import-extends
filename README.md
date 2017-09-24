@@ -96,7 +96,7 @@ const StatelessComponent = () => {
 export default StatelessComponent;
 ```
 
-## TODO
+## Todo
 - Options to add more imports
 - PureComponent implementation
 
