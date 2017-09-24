@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-react-import-extends",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Write React Components without worrying to import React and extend component",
   "main": "lib/index.js",
   "scripts": {

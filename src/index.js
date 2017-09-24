@@ -22,7 +22,9 @@ export default function ({ types: t }) {
           }
 
           const reactImport = t.importDeclaration([
-            t.importDefaultSpecifier(t.identifier('React, {PropTypes, Component}')),
+            t.importDefaultSpecifier(t.identifier('React')),
+            t.importSpecifier(t.identifier('Component'), t.identifier('Component')),
+            t.importSpecifier(t.identifier('PropTypes'), t.identifier('PropTypes'))
           ], t.stringLiteral('react'));
 
           path.node.body.unshift(reactImport);
