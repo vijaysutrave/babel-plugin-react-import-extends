@@ -6,23 +6,20 @@ export default function ({ types: t }) {
       JSXOpeningElement() {
         containsJSX = true;
       },
-
+      ClassDeclaration(classPath) {
+        if (classPath.node.superClass) {
+          return;
+        }
+        if (checkIfClassHasReactRender(classPath.node)) {
+          containsJSX = true;
+          classPath.node.superClass = t.identifier('Component')
+        }
+      },
       Program: {
         exit(path) {
           if (!containsJSX || path.scope.hasBinding('React')) {
             return;
           }
-
-          path.traverse({
-            ClassDeclaration(classPath) {
-              if (classPath.node.superClass) {
-                return;
-              }
-              if (checkIfClassHasReactRender(classPath.node)) {
-                classPath.node.superClass = t.identifier('Component')
-              }
-            },
-          });
 
           const reactImport = t.importDeclaration([
             t.importDefaultSpecifier(t.identifier('React, {PropTypes, Component}')),

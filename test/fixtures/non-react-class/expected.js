@@ -20,7 +20,4 @@ class Person {
   }
 }
 
-export {
-  StatefulComponent,
-  Person
-}
+export { StatefulComponent, Person };
