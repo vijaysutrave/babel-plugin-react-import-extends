@@ -1,18 +1,22 @@
 /* Default babel plugin */
 export default function ({ types: t }) {
   let containsJSX = false;
+  let extendsFrom;
+
   return {
     visitor: {
       JSXOpeningElement() {
         containsJSX = true;
       },
-      ClassDeclaration(classPath) {
+      ClassDeclaration(classPath, state) {
+        extendsFrom = state.opts.extends || 'Component'
+
         if (classPath.node.superClass) {
           return;
         }
         if (checkIfClassHasReactRender(classPath.node)) {
           containsJSX = true;
-          classPath.node.superClass = t.identifier('Component')
+          classPath.node.superClass = t.identifier(extendsFrom)
         }
       },
       Program: {
@@ -23,7 +27,7 @@ export default function ({ types: t }) {
 
           const reactImport = t.importDeclaration([
             t.importDefaultSpecifier(t.identifier('React')),
-            t.importSpecifier(t.identifier('Component'), t.identifier('Component')),
+            t.importSpecifier(t.identifier(extendsFrom), t.identifier(extendsFrom)),
             t.importSpecifier(t.identifier('PropTypes'), t.identifier('PropTypes'))
           ], t.stringLiteral('react'));
 

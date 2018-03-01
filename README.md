@@ -8,6 +8,9 @@ Enter `babel-plugin-react-import-extends`
 
 This babel plugin auto-magically extends a "React Component", and imports React within the component if the detects the file type to be a React Component, so that you don't have to repeat that annoying stuff anymore, yay!
 
+Now with support to `PureComponent`!
+Note that it supports anything you pass in - not just `PureComponent` -, so be careful!
+
 
 ## Install
 `npm install --save-dev babel-plugin-react-import-extends`
@@ -20,7 +23,12 @@ Add the plugin to the plugins list in your `.babelrc` file
 
 ```
 {
-  plugins: ['react-import-extends', ...otherPlugins]
+  plugins: [
+    ...otherPlugins,
+    ["react-import-extends", {
+      extends: "PureComponent" // not necessary, defaults to Component
+    }]
+  ]
 }
 ```
 
@@ -98,7 +106,6 @@ export default StatelessComponent;
 
 ## Todo
 - Options to add more imports
-- PureComponent implementation
 
 
 ## License
